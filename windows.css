@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: clip;
+}
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    width: 100%;
+}
+
+nav {
+    min-height: 10vh;
+}
+
+nav li {
+    letter-spacing: 0.1em;
+    position: relative;
+}
+
+nav li::after{
+    content: '';
+    height: 0.2em;
+    width: 0;
+    position: absolute;
+    background-color: white;
+    transition: all 0.5s ease;
+}
+
+li:hover::after {
+    width: 100%;
+}
+
+#searchBut:hover {
+    background-color: black;
+}
+
+main {
+    background-color: #bddadb;
+    z-index: -1;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: all 0.5s ease;
+}
+
+#intrimg:hover {
+    scale: 1.2;
+}
+
+#backVd {
+    min-width: 100%;
+    opacity: 50%;
+}
+
+#bodyVid {
+    transition: all 0.5s ease;
+}
+
+p {
+    font-family: "Public Sans", sans-serif;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #62abf3;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.card:hover {
+    scale: 1.1;
+}
+
+#bodyVid:hover {
+    opacity: 0.8;
+    scale: 1.1;
+}
+
+#quote {
+    transition: all 1s ease;
+}
+
+#quote:hover {
+    background-color: #62abf3;
+}
+
+footer {
+    height: fit-content;
+    background-color:#62abf3;;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer ul li a {
+    text-decoration: none;
+}
