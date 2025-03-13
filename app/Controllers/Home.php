@@ -10,6 +10,23 @@ class Home extends BaseController
     {
         $model = new jobs();
 
-        return view('index');
+        echo view('templates/header');
+        echo view('index');
+        echo view('templates/footer');
+    }
+
+    public function about() {
+        echo view('templates/header');
+        echo view('aboutus');
+        echo view('templates/footer');
+    }
+
+    public function services() {
+        $model = new jobs();
+        $data['jobs'] = $model->getJobs();
+
+        echo view('templates/header');
+        return view('services', $data);
+        echo view('templates/footer');
     }
 }
