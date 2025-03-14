@@ -1,3 +1,25 @@
 * {
-    color: red;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: clip;
+    scrollbar-width: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: black;
+}
+
+#serviceRow {
+    height: fit-content;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer a {
+    text-decoration: none;
 }

@@ -13,10 +13,10 @@
         <link rel="stylesheet" href="/assets/css/stylesheet.css">
     </head>
     <body class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-            <a class="navbar-brand ms-2" href="/project-root/public/">
-                <img src="../public/assets/img/logo.png" alt="Logo" style="height: 5vh; width: 4vw;">
-                <p style="display: inline;">Sparking Windows</p> 
+        <nav style="background-color:rgb(85, 152, 218);" class="navbar navbar-expand-lg navbar-light sticky-top">
+            <a class="navbar-brand ms-2" href="/">
+                <img src="/assets/img/logo.png" alt="Logo" style="height: 5vh; width: 4vw;">
+                <h5 style="display: inline;">Sparking Windows</h5> 
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,9 +30,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about"><span class="fa-solid fa-address-card"></span> About Us</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="services"><span class="fa-solid fa-screwdriver-wrench"></span> Services</a>
-                     </li>
+
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa-solid fa-screwdriver-wrench"></span> Services</a>
+                        <div class="dropdown-menu" style="background-color: rgb(122, 178, 211);">
+                            <a class="dropdown-item" href="/services">View All</a>
+                            <a class="dropdown-item" href="/booking">Book Now</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>

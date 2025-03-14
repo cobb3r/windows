@@ -17,7 +17,7 @@ class Home extends BaseController
 
     public function about() {
         echo view('templates/header');
-        echo view('aboutus');
+        echo view('about');
         echo view('templates/footer');
     }
 
@@ -26,7 +26,22 @@ class Home extends BaseController
         $data['jobs'] = $model->getJobs();
 
         echo view('templates/header');
-        return view('services', $data);
+        echo view('services', $data);
+        echo view('templates/footer');
+    }
+
+    public function booking() {
+        echo view('templates/header');
+        echo view('booking');
+        echo view('templates/footer');
+    }
+
+    public function availability() {
+        $model = new jobs();
+        $data['jobs'] = $model->getJobs();
+
+        echo view('templates/header');
+        echo view('availability', $data);
         echo view('templates/footer');
     }
 }
