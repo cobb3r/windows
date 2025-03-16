@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\jobs;
+use App\Models\bookings;
 
 class Home extends BaseController
 {
@@ -37,8 +38,13 @@ class Home extends BaseController
     }
 
     public function availability() {
+        $uri = service('uri');$dateArray = ($uri->getSegments());
         $model = new jobs();
-        $data['jobs'] = $model->getJobs();
+        $bookings = new bookings();
+        $data = [
+            'jobs' => $model->getJobs(),
+            'bookings' => $bookings->getBookings($dateArray)
+        ];
 
         echo view('templates/header');
         echo view('availability', $data);

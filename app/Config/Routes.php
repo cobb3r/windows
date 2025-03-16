@@ -8,5 +8,6 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/about', 'Home::about');
 $routes->get('/services', 'Home::services');
-$routes->get('/booking', 'Home::booking');
-$routes->get('/availability', 'Home::availability');
+$routes->get('/booking/(:any)', 'Home::booking');
+$routes->get('/availability/(:any)/(:any)/(:any)', 'Home::availability');
+$routes->post('/availability/(:any)/(:any)/(:any)', 'Home::availability');

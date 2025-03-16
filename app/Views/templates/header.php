@@ -28,14 +28,14 @@
                         <a class="nav-link" href="/"><span class="fa-solid fa-house"></span> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about"><span class="fa-solid fa-address-card"></span> About Us</a>
+                        <a class="nav-link" href="/about"><span class="fa-solid fa-address-card"></span> About Us</a>
                      </li>
 
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa-solid fa-screwdriver-wrench"></span> Services</a>
                         <div class="dropdown-menu" style="background-color: rgb(122, 178, 211);">
                             <a class="dropdown-item" href="/services">View All</a>
-                            <a class="dropdown-item" href="/booking">Book Now</a>
+                            <a class="dropdown-item" href="/booking/1">Book Now</a>
                         </div>
                     </li>
                 </ul>

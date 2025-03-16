@@ -1,3 +1,5 @@
+<main>
+<?php $uri = service('uri');$dateArray = ($uri->getSegments());?>
 <table class="table table-bordered vh-100">
 <thead>
     <tr id="monthHeader">
@@ -18,7 +20,7 @@
         if ($x == 1 || $x == 8 || $x == 15 || $x == 22 || $x == 29) { ?>
             <tr>
         <?php } ?>
-        <td class="dayCon"><p class="day"><?= $x ?></p><button class="dayBut"><a href="/availability" style="text-decoration: none; color: black">View Availability</a></button></td>
+        <td class="dayCon"><p class="day"><?= $x ?></p><button class="dayBut"><a href="/availability/<?= $dateArray[1]?>/<?= $x ?>/<?= date("m")?>/<?= date("Y")?>" style="text-decoration: none; color: black">View Availability</a></button></td>
         <?php if ($x == 7 || $x == 14 || $x == 21 || $x == 28 || $x == 31) { ?>
             </tr>
         <?php } ?>
@@ -40,3 +42,4 @@
         }
     }
 </script>
+</main>
