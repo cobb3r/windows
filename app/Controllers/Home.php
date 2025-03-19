@@ -9,8 +9,6 @@ class Home extends BaseController
 {
     public function index()
     {
-        $model = new jobs();
-
         echo view('templates/header');
         echo view('index');
         echo view('templates/footer');
@@ -39,6 +37,7 @@ class Home extends BaseController
 
     public function availability() {
         $uri = service('uri');$dateArray = ($uri->getSegments());
+
         $model = new jobs();
         $bookings = new bookings();
         $data = [
@@ -48,6 +47,38 @@ class Home extends BaseController
 
         echo view('templates/header');
         echo view('availability', $data);
+        echo view('templates/footer');
+    }
+
+    public function bookNow() {
+        $uri = service('uri');$dateArray = ($uri->getSegments());
+
+        $model = new jobs();
+        $data['jobs'] = $model->getJobs();
+
+        echo view('templates/header');
+        echo view('bookNow', $data);
+        echo view('templates/footer');
+    }
+
+    public function success() {
+        $uri = service('uri');$dateArray = ($uri->getSegments());
+
+        print_r($dateArray);
+
+        $data = [
+            'jobID' => $dateArray[1],
+            'bookingDate' => $dateArray[2],
+            'bookingTime' => $dateArray[3]
+        ];
+
+        $model = new jobs();
+        $bookings = new bookings();
+        
+        $bookings->insertData($data);
+        
+        echo view('templates/header');
+        echo view('success');
         echo view('templates/footer');
     }
 }

@@ -1,7 +1,5 @@
 <main>
-<?php
-
- $uri = service('uri');$dateArray = ($uri->getSegments());?>
+<?php $uri = service('uri');$dateArray = ($uri->getSegments());?>
 <table class="table table-bordered vh-100">
 <thead>
     <tr id="availableHeader">
@@ -19,18 +17,27 @@
     </tr>
 </thead>
 <tbody>
-</tbody>
-    <?php $newTime = strtotime("8:00:00"); $timeSlot = $newTime; $timeTaken = (60 * ($jobs[($dateArray[1] - 1)]['time_needed']));?>
+    <?php $shiftStart = strtotime("8:00:00"); $shiftEnd = $shiftStart; $timeTaken = (60 * ($jobs[($dateArray[1] - 1)]['time_needed']));?>
     <?php for($x=1; $x <= (9 / $jobs[($dateArray[1] - 1)]['time_needed']); $x++) { ?>
         <tr>
-            <?php $newTime = $timeSlot; $timeSlot = strtotime("+ $timeTaken Minutes", $timeSlot); ?>
-            <td class="timeSlots"><?=date("H:i", $newTime)?> - <?=date("H:i", $timeSlot)?></td>
-            <?php if (date("H:i:s", $newTime) == $bookings['0']['bookingTime']) { ?>
-                <td style="background-color: red;"><p>Fully Booked</p></td>
-            <?php } else { ?>
-                <td><button><a>Book Now</a></button></td>
-            <?php } ?>
-        <tr>
+            <?php $shiftStart = $shiftEnd; $shiftEnd = strtotime("+ $timeTaken Minutes", $shiftEnd); ?>
+            <td class="shiftEnds"><?=date("H:i", $shiftStart)?> - <?=date("H:i", $shiftEnd)?></td>
+            <td id="time<?= $x ?>"><button><a href="/bookNow/<?= $dateArray[1]?>/<?= $dateArray[4]?>-<?= $dateArray[3]?>-<?= $dateArray[2]?>/<?= date("H:i", $shiftStart) ?>" style="text-decoration: none; color:black">Book Now</a></button></td>
+            <?php for($z=0; $z < count($bookings); $z++) {
+                $bookedTaken = (60 * $jobs[$bookings[$z]['jobID'] -1]['time_needed']);
+                if (date("H:i:s", $shiftStart) == $bookings[$z]['bookingTime'] || date("H:i", $shiftStart) < date("H:i", $newEnd)){ 
+                    if (date("H:i:s", $shiftStart) == $bookings[$z]['bookingTime']) {
+                        $newEnd = (strtotime("+ $bookedTaken Minutes", $shiftStart));
+                    }?>
+                    <script>
+                        let bookedSlot<?=$x?> = document.getElementById("time<?= $x ?>")
+                        bookedSlot<?=$x?>.innerHTML = "<p>Booked</p>";
+                        bookedSlot<?=$x?>.style.backgroundColor = "red";
+                    </script>
+                <?php } 
+            } ?>
+        </tr>
     <?php } ?>
+</tbody>
 </table>
 </main>

@@ -16,7 +16,11 @@ class bookings extends Model {
     protected $allowedFields = ['bookingID', 'jobID', 'bookingDate', 'bookingTime'];
 
     public function getBookings(array $dateArray) {
-        return $this->where('jobID', $dateArray[1])->where('bookingDate', $dateArray[4]."-". $dateArray[3] ."-".$dateArray[2])->find();
+        return $this->where('bookingDate', $dateArray[4]."-". $dateArray[3] ."-".$dateArray[2])->find();
+    }
+
+    public function insertData(array $data) {
+        $this->insert($data);
     }
 }
 
