@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\jobs;
 use App\Models\bookings;
+use App\Models\contact;
 
 class Home extends BaseController
 {
@@ -62,9 +63,12 @@ class Home extends BaseController
     }
 
     public function success() {
+        helper(['form']);
         $uri = service('uri');$dateArray = ($uri->getSegments());
 
-        print_r($dateArray);
+        $model = new jobs();
+        $bookings = new bookings();
+        $contact = new contact();
 
         $data = [
             'jobID' => $dateArray[1],
@@ -72,13 +76,22 @@ class Home extends BaseController
             'bookingTime' => $dateArray[3]
         ];
 
-        $model = new jobs();
-        $bookings = new bookings();
-        
         $bookings->insertData($data);
+        $bookingID = $bookings->getID($data);
+
+        $contactData = [
+            'bookingID' => $bookingID['bookingID'],
+            'firstName' => $_POST['fName'],
+            'lastName' => $_POST['lName'],	
+            'email' => $_POST['email'],	
+            'address' => $_POST['address'], 	
+            'postCode' => $_POST['postCode']
+        ];
+        
+        $contact->insertData($contactData);
         
         echo view('templates/header');
         echo view('success');
-        echo view('templates/footer');
+        echo view('templates/footer'); 
     }
 }
