@@ -1,6 +1,6 @@
 <main class="row d-flex justify-content-center align-items-center">
     <?php $uri = service('uri');$dateArray = ($uri->getSegments()); ?>
-    <div class="col-8">
+    <div id="formContainer" class="col-8 my-4">
         <form id="form" class="d-flex flex-column" action="/success/<?= $dateArray[1]?>/<?= $dateArray[2]?>/<?= $dateArray[3]?>" method="post">
             <label for="fName">First Name</label>
             <input type="text" name="fName">

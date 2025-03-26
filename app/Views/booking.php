@@ -1,7 +1,7 @@
-<main>
+<main style="background-color: grey;">
 <?php $uri = service('uri');$dateArray = ($uri->getSegments());?>
 <?php $dayOfFirst = date("N", (strtotime(date('Y')."/".date('n')."/01"))); $startingPoint = date("j", strtotime("- $dayOfFirst Days", strtotime(date('Y')."/".date('n')."/01")));?>
-<table class="table table-bordered vh-100">
+<table class="table table-bordered vh-100 my-0">
 <thead>
     <tr id="monthHeader">
         <th colspan="7" id="header" class="text-center"><?= date('F') ?></th>

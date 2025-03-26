@@ -1,7 +1,7 @@
 <main class="row m-0">
     <div class="col-12 p-0" style="width: 100%;">
         <div class="row my-1">
-            <div class="col-12 col-sm-4" style="z-index: 2;">
+            <div class="col-12 col-sm-3 ms-4" style="z-index: 2;">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2424.0168763907845!2d-1.8413097703946!3d52.58738811280315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTLCsDM1JzEzLjQiTiAxwrA1MCcyMS40Ilc!5e0!3m2!1sen!2sim!4v1729131363415!5m2!1sen!2sim" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-12 col-sm-8 text-center" style="z-index: 2;">
@@ -24,7 +24,7 @@
                 <p>At Sparkling Windows, we are dedicated to providing a full range of high-quality exterior cleaning services that help keep your home or business looking its absolute best. While we specialize in window cleaning—ensuring a streak-free, crystal-clear shine that enhances the view and appearance of your property—we also offer a variety of additional services to meet all your exterior cleaning needs. Our gutter cleaning service ensures your gutters are free of debris, preventing clogs and water damage, while our patio cleaning services use advanced techniques to restore the beauty of outdoor spaces by removing dirt, grime, moss, and other buildup. Our professional team is fully trained and equipped with industry-leading tools, ensuring that every job is handled with precision, care, and safety. We take pride in our eco-friendly approach, using non-toxic cleaning solutions to deliver spotless results without harming the environment or your property. Whether its a routine maintenance plan for your windows and gutters or a one-time deep clean for your patio or driveway, we provide flexible scheduling to accommodate your busy lifestyle.</p>
             </div>
             <div class="col-12 col-sm-4 order-1 order-sm-2"> 
-                <img src="../Images/castle.jpg" alt="" style="width: 100%; height: 100%;">
+                <img src="assets/img/about.jpg" alt="" style="width: 100%; height: 100%;">
             </div>
         </div>
         <div class="row">
